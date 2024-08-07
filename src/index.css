@@ -3,8 +3,13 @@
   --font-family: 'Inter', sans-serif;
   --main-color: #101828;
   --text-color: #475467;
-  --accent-color: #e44848;
+  --button-color: #e44848;
+  --star-color: #ffc531;
+  --inputs: #f7f7f7;
   --background: #fff;
+  --white: #fff;
+  --transition-duration: 250ms;
+  --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
