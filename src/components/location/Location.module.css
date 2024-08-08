@@ -1,0 +1,12 @@
+.iconMap {
+  fill: #fff;
+  stroke: #000;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
+  line-height: 1.5%;
+}

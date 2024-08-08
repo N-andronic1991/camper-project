@@ -1,0 +1,51 @@
+.card {
+  display: flex;
+  margin-left: auto;
+  gap: 24px;
+  width: 888px;
+  height: 358px;
+  padding: 24px;
+  margin-bottom: 32px;
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 20px;
+}
+
+.description {
+  max-width: 525px;
+  height: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.favoriteBtn {
+  cursor: pointer;
+  border: 0;
+  background-color: #fff;
+}
+.iconHeart {
+  fill: #fff;
+  stroke: #000;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.textThumb {
+  display: flex;
+  justify-content: space-between;
+}
+
+.thumb {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}

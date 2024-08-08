@@ -1,18 +1,15 @@
 import { lazy, Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 
 import Loader from '../components/loader/Loader';
 import css from './App.module.css';
 import Navigation from '../components/navigation/Navigation';
 
 const HomePage = lazy(() => import('../pages/homePage/HomePage'));
-const CamperCatalogPage = lazy(() =>
-  import('../pages/camperCatalogPage/CamperCatalogPage')
-);
+const CatalogPage = lazy(() => import('../pages/catalogPage/CatalogPage'));
 const MyFavoritesPage = lazy(() =>
   import('../pages/myFavoritesPage/MyFavoritesPage')
 );
-const NotFoundPage = lazy(() => import('../pages/notFoundPage/NotFoundPage'));
 
 const App = () => {
   return (
@@ -24,10 +21,9 @@ const App = () => {
         <Suspense fallback={<Loader />}>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/adverts" element={<CamperCatalogPage />} />
+            <Route path="/adverts" element={<CatalogPage />} />
             <Route path="/favorites" element={<MyFavoritesPage />} />
-            {/* <Route path="/catalog/:catalogId/*" element={<CamperDetailsPage />} /> */}
-            <Route path="*" element={<NotFoundPage />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Suspense>
       </main>
