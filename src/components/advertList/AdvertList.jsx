@@ -5,6 +5,7 @@ import css from './AdvertList.module.css';
 
 const AdvertList = () => {
   const adverts = useSelector(selectAdverts);
+
   return (
     <ul>
       {Array.isArray(adverts) &&

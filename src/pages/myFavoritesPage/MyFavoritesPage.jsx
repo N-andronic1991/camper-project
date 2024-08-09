@@ -1,16 +1,14 @@
 import { useSelector } from 'react-redux';
-import { selectFavorites } from '../../redux/favorites/selectors';
+import { selectFavoriteAdverts } from '../../redux/favorites/selectors';
+
 import AdvertItem from '../../components/advertItem/AdvertItem';
 
 const MyFavoritesPage = () => {
-  const favoriteIds = useSelector(selectFavorites);
-  const adverts = useSelector(state =>
-    state.adverts.items.filter(advert => favoriteIds.includes(advert._id))
-  );
+  const favoriteAdverts = useSelector(selectFavoriteAdverts);
 
   return (
     <ul>
-      {adverts.map(advert => (
+      {favoriteAdverts.map(advert => (
         <li key={advert._id}>
           <AdvertItem {...advert} />
         </li>

@@ -33,6 +33,11 @@
   stroke: #000;
 }
 
+.iconHeartFavorited {
+  fill: #e44848;
+  stroke: none;
+}
+
 .price {
   font-weight: 600;
   font-size: 24px;

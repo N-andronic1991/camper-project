@@ -1,7 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
+// import { fetchFavorites, addFavorites, deleteFavorites } from './operation';
 
 const INITIAL_STATE = {
   items: [],
+  loading: false,
+  error: null,
 };
 
 const favoritesSlice = createSlice({

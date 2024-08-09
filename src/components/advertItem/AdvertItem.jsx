@@ -1,11 +1,12 @@
 import css from './AdvertItem.module.css';
+import clsx from 'clsx';
 import { icons as sprite } from '../../assets/icons/index.js';
 import Reviews from '../reviews/Reviews';
 import Location from '../location/Location';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleFavorite } from '../../redux/favorites/slice';
 import { selectIsFavorite } from '../../redux/favorites/selectors';
-
+import { toggleFavorite } from '../../redux/favorites/slice';
+import { openModal, setSelectedAdvert } from '../../redux/modal/slice';
 const AdvertItem = ({
   _id,
   name,
@@ -22,6 +23,11 @@ const AdvertItem = ({
     dispatch(toggleFavorite(_id));
   };
 
+  const handleShowMoreDetails = () => {
+    dispatch(setSelectedAdvert(_id));
+    dispatch(openModal());
+  };
+
   return (
     <div className={css.card}>
       <img src={gallery[0]} alt={name} width="290" height="310" />
@@ -35,7 +41,13 @@ const AdvertItem = ({
               className={css.favoriteBtn}
               type="button"
             >
-              <svg className={css.iconHeart} width="21" height="18">
+              <svg
+                className={clsx(css.iconHeart, {
+                  [css.iconHeartFavorited]: isFavorite,
+                })}
+                width="21"
+                height="18"
+              >
                 <use xlinkHref={`${sprite}#icon-heart`}></use>
               </svg>
             </button>
@@ -58,7 +70,11 @@ const AdvertItem = ({
           </li>
         </ul> */}
 
-        <button className={css.btn} type="button">
+        <button
+          onClick={handleShowMoreDetails}
+          className={css.btn}
+          type="button"
+        >
           Show more
         </button>
       </div>

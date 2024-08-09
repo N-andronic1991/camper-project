@@ -11,7 +11,7 @@ import {
   selectLoading,
   selectPage,
 } from '../../redux/adverts/selectors';
-
+import CustomModal from '../../components/modal/CustomModal';
 import LoadMoreBtn from '../../components/loadMoreBtn/LoadMoreBtn';
 
 const CamperCatalogPage = () => {
@@ -34,6 +34,7 @@ const CamperCatalogPage = () => {
       {error && <ErrorMessage />}
       {Array.isArray(adverts) && <AdvertList />}
       {showLoadMoreButton && <LoadMoreBtn />}
+      <CustomModal />
     </div>
   );
 };
