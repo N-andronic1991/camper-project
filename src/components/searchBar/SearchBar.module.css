@@ -1,0 +1,42 @@
+.label {
+  display: block;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(16, 24, 40, 0.6);
+}
+.searchInput {
+  /* position: relative; */
+  display: block;
+  margin-top: 8px;
+  border-radius: 10px;
+  border: none;
+  padding: 18px 18px 18px 40px;
+  width: 360px;
+  min-height: 56px;
+  background-color: var(--inputs);
+}
+.searchInput::placeholder {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  color: rgba(16, 24, 40, 0.6);
+}
+
+.iconMap {
+  display: inline-block;
+  fill: #fff;
+  stroke: rgba(16, 24, 40, 0.6);
+}
+
+.location {
+  position: absolute;
+  top: 154px;
+  left: 150px;
+}
+
+.searchInput:focus .location {
+  color: #000;
+}

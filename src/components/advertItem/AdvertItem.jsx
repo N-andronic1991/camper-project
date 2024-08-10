@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectIsFavorite } from '../../redux/favorites/selectors';
 import { toggleFavorite } from '../../redux/favorites/slice';
 import { openModal, setSelectedAdvert } from '../../redux/modal/slice';
+import Categories from '../categories/Categories';
 const AdvertItem = ({
   _id,
   name,
@@ -15,6 +16,10 @@ const AdvertItem = ({
   reviews,
   location,
   description,
+  adults,
+  engine,
+  transmission,
+  details,
 }) => {
   const dispatch = useDispatch();
   const isFavorite = useSelector(state => selectIsFavorite(state, _id));
@@ -45,8 +50,8 @@ const AdvertItem = ({
                 className={clsx(css.iconHeart, {
                   [css.iconHeartFavorited]: isFavorite,
                 })}
-                width="21"
-                height="18"
+                width="24"
+                height="24"
               >
                 <use xlinkHref={`${sprite}#icon-heart`}></use>
               </svg>
@@ -59,16 +64,12 @@ const AdvertItem = ({
         </div>
 
         <p className={css.description}>{description}</p>
-        {/* <ul class="categoryList">
-          <li class="categoryItem">
-            <button class="categoryBtn" type="button">
-              <svg class="users" width="20" height="20">
-                <use xlink:href="./src/assets/icons/sprite.svg#icon-users"></use>
-              </svg>
-              2 adults
-            </button>
-          </li>
-        </ul> */}
+        <Categories
+          adults={adults}
+          engine={engine}
+          transmission={transmission}
+          details={details}
+        />
 
         <button
           onClick={handleShowMoreDetails}

@@ -4,3 +4,8 @@
   text-decoration: underline;
   text-decoration-skip-ink: none;
 }
+
+.iconStar {
+  display: inline-block;
+  margin-right: 4px;
+}

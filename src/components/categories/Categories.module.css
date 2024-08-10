@@ -1,0 +1,40 @@
+.categoryBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  min-width: 87px;
+  border-radius: 100px;
+  padding: 12px 18px;
+  background-color: #f2f4f7;
+
+  color: var(--main-title-text-color);
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  text-align: center;
+  cursor: pointer;
+  border: 0;
+}
+
+.uppercase::first-letter {
+  text-transform: uppercase;
+}
+
+.categoryList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  row-gap: 8px;
+  column-gap: 8px;
+  margin-bottom: 24px;
+}
+
+.kitchen,
+.automatic,
+.beds {
+  fill: #fff;
+  stroke: #000;
+}

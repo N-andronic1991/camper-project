@@ -1,9 +1,57 @@
 .modalBtn {
   position: absolute;
-  top: 3px;
-  right: 3px;
+  top: 40px;
+  right: 40px;
   background-color: transparent;
   outline: none;
   border: none;
   cursor: pointer;
+}
+.iconCross {
+  stroke: #000;
+}
+
+.imgThumb {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.imgItem {
+  display: block;
+  width: 290px;
+  height: 310px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  background-color: #475467;
+  /* outline: 1px solid red; */
+}
+
+.photo {
+  position: absolute; /* Position the image absolutely inside the li */
+  top: 0;
+  left: 0;
+  width: 100%; /* Make the image cover the width of the li */
+  height: 100%; /* Make the image cover the height of the li */
+  object-fit: cover; /* Ensure the image covers the li, cropping if necessary */
+  object-position: center; /* Center the image within the li */
+}
+
+.description {
+  margin-bottom: 44px;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: justify;
+  color: var(--text-color);
+}
+
+.tabsBtn {
+  margin-bottom: 24px;
+}
+
+.contentThumb {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
 }

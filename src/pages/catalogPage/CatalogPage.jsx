@@ -1,3 +1,4 @@
+import css from './CatalogPage.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import AdvertList from '../../components/advertList/AdvertList';
@@ -13,6 +14,7 @@ import {
 } from '../../redux/adverts/selectors';
 import CustomModal from '../../components/modal/CustomModal';
 import LoadMoreBtn from '../../components/loadMoreBtn/LoadMoreBtn';
+import SearchBar from '../../components/searchBar/SearchBar';
 
 const CamperCatalogPage = () => {
   const dispatch = useDispatch();
@@ -29,12 +31,17 @@ const CamperCatalogPage = () => {
   const showLoadMoreButton = adverts.length % limit === 0 && adverts.length > 0;
 
   return (
-    <div>
-      {loading && <Loader />}
-      {error && <ErrorMessage />}
-      {Array.isArray(adverts) && <AdvertList />}
-      {showLoadMoreButton && <LoadMoreBtn />}
-      <CustomModal />
+    <div className={css.catalogContainer}>
+      <div className={css.filtersThumb}>
+        <SearchBar />
+      </div>
+      <div>
+        {loading && <Loader />}
+        {error && <ErrorMessage />}
+        {Array.isArray(adverts) && <AdvertList />}
+        {showLoadMoreButton && <LoadMoreBtn />}
+        <CustomModal />
+      </div>
     </div>
   );
 };

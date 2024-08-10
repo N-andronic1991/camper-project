@@ -20,6 +20,7 @@ const favoritesPersistConfig = {
 
 import { AdvertReducer } from './adverts/slice';
 import { FavoriteReducer } from './favorites/slice';
+import { FilterReducer } from './filters/slice';
 import { ModalReducer } from './modal/slice';
 
 export const store = configureStore({
@@ -27,6 +28,7 @@ export const store = configureStore({
     adverts: AdvertReducer,
     favorites: persistReducer(favoritesPersistConfig, FavoriteReducer),
     modal: ModalReducer,
+    filters: FilterReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

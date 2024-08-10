@@ -1,0 +1,4 @@
+.catalogContainer {
+  display: flex;
+  justify-content: space-between;
+}
