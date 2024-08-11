@@ -1,1 +1,0 @@
-{"version":3,"file":"HomePage-CrUdmPDB.js","sources":["../../src/pages/homePage/HomePage.jsx"],"sourcesContent":["const HomePage = () => {\r\n  return <div>Hello World</div>;\r\n};\r\n\r\nexport default HomePage;\r\n"],"names":["HomePage","jsx"],"mappings":"wCAAA,MAAMA,EAAW,IACRC,EAAA,IAAC,OAAI,SAAW,aAAA,CAAA"}
