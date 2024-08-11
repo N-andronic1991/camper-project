@@ -63,4 +63,14 @@
 .detailsItem {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 14px;
+}
+.detailsItem:last-child {
+  margin-bottom: 0;
+}
+.feture {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.33;
 }

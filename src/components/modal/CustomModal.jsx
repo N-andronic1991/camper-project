@@ -11,10 +11,10 @@ import { icons as sprite } from '../../assets/icons/index.js';
 import { useState } from 'react';
 import { selectError, selectLoading } from '../../redux/adverts/selectors';
 import BookingForm from '../bookingForm/BookingForm';
+import Rating from '../rating/Rating';
 
 const CustomModal = () => {
   Modal.setAppElement('#root');
-
   const customStyles = {
     overlay: {
       position: 'fixed',
@@ -41,7 +41,6 @@ const CustomModal = () => {
   const selectedAdvert = useSelector(state =>
     state.adverts.items.find(advert => advert._id === selectedAdvertId)
   );
-  console.log(selectedAdvert);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
 
@@ -123,9 +122,21 @@ const CustomModal = () => {
                   {selectedAdvert.reviews && selectedAdvert.reviews.length > 0
                     ? selectedAdvert.reviews.map((review, index) => {
                         return (
-                          <li key={index}>
-                            <h3>{review.reviewer_name}</h3>
-                            <span>{review.reviewer_rating}</span>
+                          <li className={css.reviewItem} key={index}>
+                            <div className={css.nameThumb}>
+                              <span className={css.letter}>
+                                {review.reviewer_name.charAt(0)}
+                              </span>
+                              <div className={css.ratingThumb}>
+                                <h3 className={css.nameTitle}>
+                                  {review.reviewer_name}
+                                </h3>
+                                <Rating
+                                  reviewerRating={review.reviewer_rating}
+                                />
+                              </div>
+                            </div>
+
                             <p>{review.comment}</p>
                           </li>
                         );

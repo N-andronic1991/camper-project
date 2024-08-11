@@ -1,7 +1,10 @@
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import css from './BookingForm.module.css';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import { icons as sprite } from '../../assets/icons/index.js';
 
 const BookingSchema = Yup.object().shape({
   name: Yup.string()
@@ -21,6 +24,7 @@ const BookingForm = () => {
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors },
     reset,
   } = useForm({
@@ -33,8 +37,10 @@ const BookingForm = () => {
   };
   return (
     <form className={css.bookForm} onSubmit={handleSubmit(onSubmitHandler)}>
-      <h2>Book your campervan now</h2>
-      <p>Stay connected! We are always ready to help you.</p>
+      <h2 className={css.title}>Book your campervan now</h2>
+      <p className={css.text}>
+        Stay connected! We are always ready to help you.
+      </p>
       <input
         className={css.inputText}
         name="name"
@@ -51,17 +57,32 @@ const BookingForm = () => {
         {...register('email')}
       />
       {errors.email && <p className={css.error}>{errors.email.message}</p>}
-      <input
-        className={css.inputText}
+
+      <Controller
         name="bookingDate"
-        type="date"
-        placeholder="Booking date"
-        {...register('bookingDate')}
+        control={control}
+        defaultValue={null}
+        render={({ field }) => (
+          <div className={css.datePickerWrapper}>
+            <DatePicker
+              placeholderText="Booking date"
+              onChange={date => field.onChange(date)}
+              selected={field.value}
+              dateFormat="dd.MM.yyyy" // Custom date format
+              className={css.customDatepicker}
+              calendarClassName={css.customCalendar}
+            />
+            <svg className={css.iconCalendar} width="20" height="20">
+              <use xlinkHref={`${sprite}#icon-calendar`}></use>
+            </svg>
+            {errors.bookingDate && (
+              <p className={css.error}>{errors.bookingDate.message}</p>
+            )}
+          </div>
+        )}
       />
-      {errors.bookingDate && (
-        <p className={css.error}>{errors.bookingDate.message}</p>
-      )}
       <textarea
+        className={css.comment}
         name="comment"
         placeholder="Comment"
         {...register('comment')}

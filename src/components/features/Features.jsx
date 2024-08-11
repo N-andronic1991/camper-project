@@ -53,30 +53,30 @@ const Features = ({ selectedAdvert }) => {
 
           <ul className={css.detailsList}>
             <li className={css.detailsItem}>
-              <p>Form</p>
-              <p>{selectedAdvert.form}</p>
+              <p className={css.feature}>Form</p>
+              <p className={css.feature}>{selectedAdvert.form}</p>
             </li>
 
             <li className={css.detailsItem}>
-              <p>Length</p>
-              <p>{selectedAdvert.length}</p>
+              <p className={css.feature}>Length</p>
+              <p className={css.feature}>{selectedAdvert.length}</p>
             </li>
             <li className={css.detailsItem}>
-              <p>Width</p>
-              <p>{selectedAdvert.width}</p>
+              <p className={css.feature}>Width</p>
+              <p className={css.feature}>{selectedAdvert.width}</p>
             </li>
             <li className={css.detailsItem}>
-              <p>Height</p>
-              <p>{selectedAdvert.height}</p>
+              <p className={css.feature}>Height</p>
+              <p className={css.feature}>{selectedAdvert.height}</p>
             </li>
             <li className={css.detailsItem}>
-              <p>Tank</p>
-              <p>{selectedAdvert.tank}</p>
+              <p className={css.feature}>Tank</p>
+              <p className={css.feature}>{selectedAdvert.tank}</p>
             </li>
 
             <li className={css.detailsItem}>
-              <p>Consumption</p>
-              <p>{selectedAdvert.consumption}</p>
+              <p className={css.feature}>Consumption</p>
+              <p className={css.feature}>{selectedAdvert.consumption}</p>
             </li>
           </ul>
         </>

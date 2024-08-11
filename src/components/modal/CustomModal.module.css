@@ -102,3 +102,42 @@
   color: var(--main-color);
   margin-bottom: 24px;
 }
+
+.reviewItem {
+  max-width: 430px;
+}
+.letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+  color: var(--button-color);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background: #f2f4f7;
+}
+
+.nameTitle {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.33;
+}
+
+.nameThumb {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 44px;
+  margin-bottom: 16px;
+}
+.ratingThumb {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
