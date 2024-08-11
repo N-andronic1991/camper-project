@@ -4,6 +4,7 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 
 import Loader from '../components/loader/Loader';
 import Navigation from '../components/navigation/Navigation';
+import Container from './container/Container';
 
 const HomePage = lazy(() => import('../pages/homePage/HomePage'));
 const CatalogPage = lazy(() => import('../pages/catalogPage/CatalogPage'));
@@ -13,7 +14,7 @@ const MyFavoritesPage = lazy(() =>
 
 const App = () => {
   return (
-    <div className={css.container}>
+    <Container>
       <header className={css.header}>
         <Navigation />
       </header>
@@ -27,7 +28,7 @@ const App = () => {
           </Routes>
         </Suspense>
       </main>
-    </div>
+    </Container>
   );
 };
 

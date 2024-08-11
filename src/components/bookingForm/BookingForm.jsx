@@ -32,7 +32,7 @@ const BookingForm = () => {
     reset();
   };
   return (
-    <form onSubmit={handleSubmit(onSubmitHandler)}>
+    <form className={css.bookForm} onSubmit={handleSubmit(onSubmitHandler)}>
       <h2>Book your campervan now</h2>
       <p>Stay connected! We are always ready to help you.</p>
       <input

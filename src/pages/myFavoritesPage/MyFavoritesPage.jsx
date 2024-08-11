@@ -1,3 +1,4 @@
+import css from './MyFavorites.module.css';
 import { useSelector } from 'react-redux';
 import { selectFavoriteAdverts } from '../../redux/favorites/selectors';
 
@@ -7,7 +8,7 @@ const MyFavoritesPage = () => {
   const favoriteAdverts = useSelector(selectFavoriteAdverts);
 
   return (
-    <ul>
+    <ul className={css.favorites}>
       {favoriteAdverts.map(advert => (
         <li key={advert._id}>
           <AdvertItem {...advert} />

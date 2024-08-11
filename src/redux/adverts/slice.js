@@ -1,9 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { apiGetAdverts, fetchReviews } from './operation';
+import { apiGetAdverts } from './operation';
 
 const INITIAL_STATE = {
   items: [],
-  reviews: [],
   loading: false,
   error: null,
   page: 1,
@@ -33,19 +32,6 @@ const advertsSlice = createSlice({
         state.items = [...state.items, ...newItems];
       })
       .addCase(apiGetAdverts.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.payload;
-      })
-      .addCase(fetchReviews.pending, state => {
-        state.loading = true;
-        state.error = null;
-      })
-      .addCase(fetchReviews.fulfilled, (state, action) => {
-        state.loading = false;
-        state.error = null;
-        state.reviews = action.payload;
-      })
-      .addCase(fetchReviews.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       });

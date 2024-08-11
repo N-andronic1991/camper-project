@@ -8,7 +8,6 @@ import { closeModal } from '../../redux/modal/slice';
 import { useSelector, useDispatch } from 'react-redux';
 import css from './CustomModal.module.css';
 import { icons as sprite } from '../../assets/icons/index.js';
-import { fetchReviews } from '../../redux/adverts/operation';
 import { useState } from 'react';
 import { selectError, selectLoading } from '../../redux/adverts/selectors';
 import BookingForm from '../bookingForm/BookingForm';
@@ -42,21 +41,12 @@ const CustomModal = () => {
   const selectedAdvert = useSelector(state =>
     state.adverts.items.find(advert => advert._id === selectedAdvertId)
   );
+  console.log(selectedAdvert);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
-  // const reviews = useSelector(state =>
-  //   state.adverts.items.find(advert => advert.reviews === selectedAdvertId)
-  // );
 
   const handleCloseModal = () => {
     dispatch(closeModal());
-  };
-
-  const handleTabChange = tab => {
-    setActiveTab(tab);
-    if (tab === 'reviews') {
-      dispatch(fetchReviews(selectedAdvertId));
-    }
   };
 
   return (
@@ -78,7 +68,7 @@ const CustomModal = () => {
           {loading && <Loader />}
           {error && <ErrorMessage />}
           <div className={css.textThumb}>
-            <h2>{selectedAdvert.name}</h2>
+            <h2 className={css.title}>{selectedAdvert.name}</h2>
             <div className={css.thumb}>
               <Reviews reviews={selectedAdvert.reviews} />
               <Location location={selectedAdvert.location} />
@@ -104,14 +94,14 @@ const CustomModal = () => {
           <p className={css.description}>{selectedAdvert.description}</p>
           <div className={css.tabs}>
             <button
-              onClick={() => handleTabChange('features')}
+              onClick={() => setActiveTab('features')}
               className={css.tabsBtn}
               type="button"
             >
               Features
             </button>
             <button
-              onClick={() => handleTabChange('reviews')}
+              onClick={() => setActiveTab('reviews')}
               className={css.tabsBtn}
               type="button"
             >
@@ -128,9 +118,21 @@ const CustomModal = () => {
             )}
 
             {activeTab === 'reviews' && (
-              <div>
-                <p>reviews</p>
-                {/* <BookingForm /> */}
+              <div className={css.contentThumb}>
+                <ul>
+                  {selectedAdvert.reviews && selectedAdvert.reviews.length > 0
+                    ? selectedAdvert.reviews.map((review, index) => {
+                        return (
+                          <li key={index}>
+                            <h3>{review.reviewer_name}</h3>
+                            <span>{review.reviewer_rating}</span>
+                            <p>{review.comment}</p>
+                          </li>
+                        );
+                      })
+                    : null}
+                </ul>
+                <BookingForm />
               </div>
             )}
           </div>

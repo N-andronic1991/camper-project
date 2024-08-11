@@ -1,6 +1,7 @@
 import css from './Navigation.module.css';
 import clsx from 'clsx';
 import { NavLink } from 'react-router-dom';
+import Logo from '../logo/Logo';
 
 const getNavLinkClassName = ({ isActive }) =>
   clsx(css.navLink, {
@@ -10,6 +11,7 @@ const getNavLinkClassName = ({ isActive }) =>
 const Navigation = () => {
   return (
     <nav className={css.nav}>
+      <Logo />
       <NavLink className={getNavLinkClassName} to="/">
         Home
       </NavLink>

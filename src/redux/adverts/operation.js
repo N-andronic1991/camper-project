@@ -21,16 +21,3 @@ export const apiGetAdverts = createAsyncThunk(
     }
   }
 );
-
-export const fetchReviews = createAsyncThunk(
-  'adverts/fetchReviews',
-  async (advertId, thunkApi) => {
-    try {
-      const { data } = await instance.get(`/adverts/${advertId}/reviews`);
-      console.log(data);
-      return data;
-    } catch (error) {
-      return thunkApi.rejectWithValue(error.message);
-    }
-  }
-);
