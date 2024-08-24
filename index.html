@@ -14,6 +14,14 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // Check if there is a redirect parameter in the URL
+      if (window.location.search.includes('redirect')) {
+        // Extract the new path and navigate to it
+        const redirectPath = window.location.search.replace('?redirect=', '');
+        window.history.replaceState(null, '', redirectPath);
+      }
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

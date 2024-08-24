@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0;url=/camper-project/index.html" />
+    <script>
+      // Extract the pathname to redirect to the correct route
+      const pathname = window.location.pathname;
+      if (pathname !== '/') {
+        window.location.replace(
+          '/camper-project/index.html?redirect=' + pathname
+        );
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
