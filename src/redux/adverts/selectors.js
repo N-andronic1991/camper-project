@@ -1,6 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { selectFiltersLocation } from '../filters/selectors';
 export const selectAdverts = state => state.adverts.items;
+export const selectAllAdverts = state => state.adverts.items;
 export const selectLoading = state => state.adverts.loading;
 export const selectError = state => state.adverts.error;
 export const selectPage = state => state.adverts.page;

@@ -18,6 +18,12 @@ const favoritesPersistConfig = {
   whitelist: ['items'],
 };
 
+const advertsPersistConfig = {
+  key: 'adverts',
+  storage,
+  blacklist: ['loading', 'error'],
+};
+
 import { AdvertReducer } from './adverts/slice';
 import { FavoriteReducer } from './favorites/slice';
 import { FilterReducer } from './filters/slice';
@@ -25,7 +31,7 @@ import { ModalReducer } from './modal/slice';
 
 export const store = configureStore({
   reducer: {
-    adverts: AdvertReducer,
+    adverts: persistReducer(advertsPersistConfig, AdvertReducer),
     favorites: persistReducer(favoritesPersistConfig, FavoriteReducer),
     modal: ModalReducer,
     filters: FilterReducer,

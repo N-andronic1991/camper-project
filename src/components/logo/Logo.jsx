@@ -6,7 +6,7 @@ const Logo = () => {
     <div>
       <a
         className={css.logo}
-        href="https://n-andronic1991.github.io/camper-project/"
+        href="http://N-andronic1991.github.io/camper-project/#"
       >
         CampTrade
         <svg className={css.iconVan} width="16" height="16">

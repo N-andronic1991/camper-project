@@ -8,13 +8,19 @@ const MyFavoritesPage = () => {
   const favoriteAdverts = useSelector(selectFavoriteAdverts);
 
   return (
-    <ul className={css.favorites}>
-      {favoriteAdverts.map(advert => (
-        <li key={advert._id}>
-          <AdvertItem {...advert} />
-        </li>
-      ))}
-    </ul>
+    <>
+      {favoriteAdverts.length === 0 ? (
+        <p>No favorite items found.</p>
+      ) : (
+        <ul className={css.favorites}>
+          {favoriteAdverts.map(advert => (
+            <li key={advert._id}>
+              <AdvertItem {...advert} />
+            </li>
+          ))}
+        </ul>
+      )}
+    </>
   );
 };
 
