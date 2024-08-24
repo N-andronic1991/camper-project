@@ -14,12 +14,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <script>
-      if (window.location.search.includes('redirect')) {
-        const newPath = window.location.search.replace('?redirect=', '');
-        window.history.replaceState(null, '', '/camper-project' + newPath);
-      }
-    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
