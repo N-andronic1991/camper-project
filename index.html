@@ -15,15 +15,11 @@
   <body>
     <div id="root"></div>
     <script>
-      // Check if there is a redirect parameter in the URL
       if (window.location.search.includes('redirect')) {
-        // Extract the new path and navigate to it
-        const redirectPath = window.location.search.replace('?redirect=', '');
-        // Ensure the path is correct for your GitHub Pages URL
-        window.history.replaceState(null, '', redirectPath);
+        const newPath = window.location.search.replace('?redirect=', '');
+        window.history.replaceState(null, '', '/camper-project' + newPath);
       }
     </script>
-    <!-- Reference the correct bundled JavaScript file -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
