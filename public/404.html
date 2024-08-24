@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content="0;url=./index.html" />
+    <script>
+      // Handle client-side routing to redirect to the correct route
+      var pathname = window.location.pathname;
+      var redirectPath = './index.html?redirect=' + pathname;
+      window.location.replace(redirectPath);
+    </script>
+  </head>
+  <body></body>
+</html>
