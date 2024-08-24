@@ -19,9 +19,11 @@
       if (window.location.search.includes('redirect')) {
         // Extract the new path and navigate to it
         const redirectPath = window.location.search.replace('?redirect=', '');
+        // Ensure the path is correct for your GitHub Pages URL
         window.history.replaceState(null, '', redirectPath);
       }
     </script>
-    <script type="module" src="/src/main.jsx"></script>
+    <!-- Reference the correct bundled JavaScript file -->
+    <script src="/camper-project/static/js/main.<hash>.js"></script>
   </body>
 </html>
