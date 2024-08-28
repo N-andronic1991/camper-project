@@ -1,0 +1,12 @@
+.modalBtn {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.iconCross {
+  stroke: #000;
+}

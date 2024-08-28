@@ -40,7 +40,7 @@ const AdvertItem = ({
         <div className={css.textThumb}>
           <h2>{name}</h2>
           <p className={css.price}>
-            &euro;{price}.00
+            &euro;{price.toFixed(2)}
             <button
               onClick={handleFavoriteClick}
               className={css.favoriteBtn}
