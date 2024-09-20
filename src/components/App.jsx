@@ -14,10 +14,12 @@ const MyFavoritesPage = lazy(() =>
 
 const App = () => {
   return (
-    <Container>
-      <header className={css.header}>
-        <Navigation />
-      </header>
+    <>
+      <Container>
+        <header className={css.header}>
+          <Navigation />
+        </header>
+      </Container>
       <main>
         <Suspense fallback={<Loader />}>
           <Routes>
@@ -28,7 +30,10 @@ const App = () => {
           </Routes>
         </Suspense>
       </main>
-    </Container>
+      {/* <footer>
+        <Container>Footer content</Container>
+      </footer> */}
+    </>
   );
 };
 

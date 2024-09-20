@@ -18,6 +18,7 @@ import {
 import { selectSelectedAdvertId } from '../../redux/modal/selectors';
 import BaseModal from '../../components/baseModal/BaseModal';
 import AdvertModalContent from '../../components/advertModalContent/AdvertModalContent';
+import Container from '../../components/container/Container';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -38,29 +39,31 @@ const CatalogPage = () => {
   const showLoadMoreButton = adverts.length % limit === 0 && adverts.length > 0;
 
   return (
-    <div className={css.catalogContainer}>
-      <div className={css.filtersThumb}>
-        <SearchBar />
+    <Container>
+      <div className={css.catalogContainer}>
+        <div className={css.filtersThumb}>
+          <SearchBar />
+        </div>
+        <div>
+          {loading && <Loader />}
+          {error && <ErrorMessage />}
+          {Array.isArray(adverts) && <AdvertList />}
+          {showLoadMoreButton && <LoadMoreBtn />}
+          <BaseModal>
+            {selectedAdvert && (
+              <AdvertModalContent
+                name={selectedAdvert.name}
+                reviews={selectedAdvert.reviews}
+                location={selectedAdvert.location}
+                price={selectedAdvert.price}
+                gallery={selectedAdvert.gallery}
+                description={selectedAdvert.description}
+              />
+            )}
+          </BaseModal>
+        </div>
       </div>
-      <div>
-        {loading && <Loader />}
-        {error && <ErrorMessage />}
-        {Array.isArray(adverts) && <AdvertList />}
-        {showLoadMoreButton && <LoadMoreBtn />}
-        <BaseModal>
-          {selectedAdvert && (
-            <AdvertModalContent
-              name={selectedAdvert.name}
-              reviews={selectedAdvert.reviews}
-              location={selectedAdvert.location}
-              price={selectedAdvert.price}
-              gallery={selectedAdvert.gallery}
-              description={selectedAdvert.description}
-            />
-          )}
-        </BaseModal>
-      </div>
-    </div>
+    </Container>
   );
 };
 

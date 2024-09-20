@@ -5,6 +5,7 @@ import { selectSelectedAdvertId } from '../../redux/modal/selectors';
 import AdvertItem from '../../components/advertItem/AdvertItem';
 import BaseModal from '../../components/baseModal/BaseModal';
 import AdvertModalContent from '../../components/advertModalContent/AdvertModalContent';
+import Container from '../../components/container/Container';
 
 const MyFavoritesPage = () => {
   const favorites = useSelector(selectFavoriteAdverts);
@@ -22,17 +23,19 @@ const MyFavoritesPage = () => {
 
   return (
     <>
-      {favorites.length === 0 ? (
-        <p>No favorite items found.</p>
-      ) : (
-        <ul className={css.favorites}>
-          {favorites.map(advert => (
-            <li key={advert._id}>
-              <AdvertItem {...advert} />
-            </li>
-          ))}
-        </ul>
-      )}
+      <Container>
+        {favorites.length === 0 ? (
+          <p>No favorite items found.</p>
+        ) : (
+          <ul className={css.favorites}>
+            {favorites.map(advert => (
+              <li key={advert._id}>
+                <AdvertItem {...advert} />
+              </li>
+            ))}
+          </ul>
+        )}
+      </Container>
       <BaseModal>
         {selectedfavorites && (
           <AdvertModalContent
