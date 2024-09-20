@@ -9,6 +9,28 @@
   border-radius: 20px;
 }
 
+/* .imgThumb {
+  width: 290px;
+  height: 310px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #475467;
+} */
+
+.cardPhoto {
+  border-radius: 10px;
+  width: 290px;
+  height: 310px;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  object-fit: cover;
+}
+
 .description {
   margin-bottom: 24px;
   max-width: 525px;

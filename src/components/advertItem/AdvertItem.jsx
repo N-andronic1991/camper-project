@@ -35,7 +35,15 @@ const AdvertItem = ({
 
   return (
     <div className={css.card}>
-      <img src={gallery[0]} alt={name} width="290" height="310" />
+      <div className={css.imgThumb}>
+        <img
+          className={css.cardPhoto}
+          src={gallery[0]}
+          alt={name}
+          width="290"
+          height="310"
+        />
+      </div>
       <div className={css.cardContent}>
         <div className={css.textThumb}>
           <h2>{name}</h2>
