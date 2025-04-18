@@ -11,7 +11,7 @@
   font-family: var(--font-family);
   font-size: 18px;
   text-decoration: none;
-  color: rgb(51, 48, 48);
+  color: var(--white);
   cursor: pointer;
 }
 .active {

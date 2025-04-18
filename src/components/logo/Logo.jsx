@@ -9,7 +9,7 @@ const Logo = () => {
         href="http://N-andronic1991.github.io/camper-project/#"
       >
         CampTrade
-        <svg className={css.iconVan} width="16" height="16">
+        <svg className={css.iconVan} width="24" height="24">
           <use xlinkHref={`${sprite}#icon-van`}></use>
         </svg>
       </a>

@@ -30,9 +30,6 @@ const App = () => {
           </Routes>
         </Suspense>
       </main>
-      {/* <footer>
-        <Container>Footer content</Container>
-      </footer> */}
     </>
   );
 };
