@@ -11,15 +11,15 @@ const BaseModal = ({ children }) => {
   const customStyles = {
     overlay: {
       position: 'fixed',
-      top: 0,
+      top: '40px',
       left: 0,
       right: 0,
-      bottom: 0,
+      bottom: '20px',
       backgroundColor: ' rgb(0, 0, 0, .8)',
     },
     content: {
       width: '982px',
-      minHeight: '620px',
+      minHeight: '600px',
       padding: '40px',
       top: '50%',
       left: '50%',

@@ -52,14 +52,20 @@ const AdvertModalContent = ({
       <div className={css.tabs}>
         <button
           onClick={() => setActiveTab('features')}
-          className={css.tabsBtn}
+          // className={css.tabsBtn}
+          className={`${css.tabsBtn} ${
+            activeTab === 'features' ? css.active : ''
+          }`}
           type="button"
         >
           Features
         </button>
         <button
           onClick={() => setActiveTab('reviews')}
-          className={css.tabsBtn}
+          // className={css.tabsBtn}
+          className={`${css.tabsBtn} ${
+            activeTab === 'reviews' ? css.active : ''
+          }`}
           type="button"
         >
           Reviews
